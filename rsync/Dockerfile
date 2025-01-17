@@ -3,7 +3,7 @@ FROM $BUILD_FROM AS RUNNING
 
 RUN apk update && \
     apk add --no-cache \
-		'rsync=3.2.7-r4' \
+		'rsync=3.4.0-r0' \
 		'openssh-client-default=9.3_p2-r2' \
 		'coreutils=9.3-r2'
 
