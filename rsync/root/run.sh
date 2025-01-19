@@ -18,6 +18,17 @@ HOST=$(bashio::config 'remote_host')
 USERNAME=$(bashio::config 'username')
 FOLDERS=$(bashio::addon.config | jq -r ".folders")
 
+# Create local directories if they don't exist
+echo "$FOLDERS" | jq -c '.[]' | while read -r folder; do
+  LOCAL_DIR=$(echo "$folder" | jq -r '.local')
+  bashio::log.info "Checking local directory: $LOCAL_DIR"
+  if [ ! -d "$LOCAL_DIR" ]; then
+    bashio::log.info "Creating local directory: $LOCAL_DIR"
+    mkdir -p "$LOCAL_DIR"
+    # chmod 755 "$LOCAL_DIR"
+  fi
+done
+
 if bashio::config.has_value 'remote_port'; then
   PORT=$(bashio::config 'remote_port')
   bashio::log.info "Use port $PORT"
