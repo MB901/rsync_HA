@@ -16,9 +16,11 @@ username: user
 folders:
   - local: /config
     remote: /home/user/config-target
+    direction: push
   - local: /media/playlists
     remote: /home/user/cool-playlists
     options: '--archive --recursive --compress'
+    direction: pull
 remote_host: ''
 remote_folder: /home/user
 
@@ -48,6 +50,12 @@ The remote folder for rsync
 ### `folders` - `options` (optional)
 
 Use your own options for rsync. This string is replacing the default one and get directly to rsync. The default is `--archive --recursive --compress --delete --prune-empty-dirs`.
+
+### `folders` - `direction` (optional)
+
+Specify the direction of synchronization for each folder:
+- `push`: Copy from Home Assistant to the remote machine (default)
+- `pull`: Copy from the remote machine to Home Assistant
 
 ### `remote_host`
 
