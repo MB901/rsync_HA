@@ -22,7 +22,6 @@ folders:
     options: '--archive --recursive --compress'
     direction: pull
 remote_host: ''
-remote_folder: /home/user
 
 ```
 
