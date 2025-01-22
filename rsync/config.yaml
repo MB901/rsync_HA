@@ -29,7 +29,7 @@ schema:
     - local: str
       remote: str
       options: str?
-      direction: str?  # 'push' (local to remote) ou 'pull' (remote to local)
+      direction: match(^pull$|^push$)?  # 'push' (local to remote) ou 'pull' (remote to local)
   remote_host: str
   remote_port: port?
 options:
