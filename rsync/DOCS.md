@@ -53,6 +53,7 @@ Use your own options for rsync. This string is replacing the default one and get
 ### `folders` - `direction` (optional)
 
 Specify the direction of synchronization for each folder:
+
 - `push`: Copy from Home Assistant to the remote machine (default)
 - `pull`: Copy from the remote machine to Home Assistant
 
