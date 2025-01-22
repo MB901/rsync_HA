@@ -17,7 +17,7 @@ ports: {}
 ports_description: {}
 map:
   - share:rw
-  - config:rw
+  - homeassistant_config
   - backup:rw
   - addons:rw
   - ssl:rw
